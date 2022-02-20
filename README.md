@@ -1,12 +1,14 @@
 # local_wordle
 
-[wordle](https://www.powerlanguage.co.uk/wordle/), with a save and load button added, made into a single file (from `/src`) using [monolith](https://github.com/Y2Z/monolith)
+[wordle](https://www.nytimes.com/games/wordle/index.html), with a save and load button added, made into a single file (from `/src`) using [monolith](https://github.com/Y2Z/monolith)
 
 mostly just unminifying the existing code, using some patterns from the original html/css, and exporting and loading the localStorage 'statistics' object.
 
+This is based on the nytimes version, which uses a slightly shortened wordlist.
+
 # Exporting existing wordle stats
 
-From the [wordle page](https://www.powerlanguage.co.uk/wordle/), Open your browser console (right click, inspect element or tools, open console or something), then load your stats like this:
+From the [wordle page](https://www.nytimes.com/games/wordle/index.html), Open your browser console (right click, inspect element or tools, open console or something), then load your stats like this:
 
 **NYT Version**
 ```javascript
