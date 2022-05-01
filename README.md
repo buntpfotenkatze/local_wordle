@@ -11,14 +11,15 @@ This is based on the nytimes version, which uses a slightly shortened wordlist.
 From the [wordle page](https://www.nytimes.com/games/wordle/index.html), Open your browser console (right click, inspect element or tools, open console or something), then load your stats like this:
 
 **NYT Version**
+
 ```javascript
-JSON.parse(window.localStorage.getItem('nyt-wordle-statistics'))
+JSON.parse(window.localStorage.getItem("nyt-wordle-statistics"));
 ```
 
 **Original Version**
 
 ```javascript
-JSON.parse(window.localStorage.getItem('statistics'))
+JSON.parse(window.localStorage.getItem("statistics"));
 ```
 
 They should look something like this
@@ -41,7 +42,6 @@ They should look something like this
   "gamesWon": 0,
   "averageGuesses": 0
 }
-
 ```
 
 and then copy the object into a text editor, save as `.json`
