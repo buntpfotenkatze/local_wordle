@@ -990,7 +990,7 @@
   }
 
   var We,
-    Ye = "mailto:nytgames@nytimes.com",
+    Ye = "",
     Ve = function (e, t) {
       for (
         var n = M.current,
@@ -8318,8 +8318,7 @@
       !i.isMobile &&
       (/iPad/.test(pe.platform) ||
         ("MacIntel" === pe.platform && 1 < pe.maxTouchPoints)) &&
-      ((d.cookie = "inferredIpad=true;domain=nytimes.com;"),
-      p.location.reload()),
+      ((d.cookie = "inferredIpad=true;domain=;"), p.location.reload()),
     p.false || ((null == V ? void 0 : V.inShortzMode) && N)
       ? (p.dataLayer = [])
       : (le &&

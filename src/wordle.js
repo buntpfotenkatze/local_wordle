@@ -234,14 +234,7 @@
     return (y =
       y ||
       setInterval(function () {
-        h.getItem(f) &&
-          (h.removeItem(f),
-          window.isHybridWebView ||
-            (document.location.href.match(/.*\.nytimes\.com/g)
-              ? document.location.reload(!0)
-              : document.location.replace(
-                  "https://www.nytimes.com/games/wordle"
-                )));
+        h.getItem(f) && (h.removeItem(f), window.isHybridWebView);
       }, b));
   }
 
@@ -531,25 +524,25 @@
       return e[le] || e.dev;
     },
     ue = ce({
-      prod: "https://myaccount.nytimes.com",
-      stg: "https://myaccount.stg.nytimes.com",
-      dev: "https://myaccount.dev.nytimes.com",
+      prod: "",
+      stg: "",
+      dev: "",
     }),
     de = ce({
-      prod: "https://www.nytimes.com/subscription/games?campaignId=8RRFW",
-      stg: "https://www.stg.nytimes.com/subscription/games?campaignId=8RRFW",
-      dev: "https://www.stg.nytimes.com/subscription/games?campaignId=8RRFW",
+      prod: "",
+      stg: "",
+      dev: "",
     }),
     me = "".concat(ue, "/svc/auth/v1/profileinfo"),
     A = ce({
-      prod: "https://www.nytimes.com/games/wordle/index.html",
-      stg: "https://www.stg.nytimes.com/games/wordle/index.html",
-      dev: "https://local.nytimes.com/games/wordle/index.html?abra-overrides=GAMES_wordleAuth_0427=1_EnableAuth",
+      prod: "",
+      stg: "",
+      dev: "",
     }),
     pe = ce({
-      prod: "https://www.nytimes.com/games/wordle/index.html?success=true",
-      stg: "https://www.stg.nytimes.com/games/wordle/index.html?success=true",
-      dev: "https://local.nytimes.com/games/wordle/index.html?abra-overrides=GAMES_wordleAuth_0427=1_EnableAuth&success=true",
+      prod: "",
+      stg: "",
+      dev: "",
     }),
     A = encodeURIComponent(A),
     pe = encodeURIComponent(pe),
@@ -566,9 +559,9 @@
       )
       .concat(A),
     A = ce({
-      prod: "https://www.nytimes.com/games/wordle/index.html",
-      stg: "https://www.stg.nytimes.com/games/wordle/index.html",
-      dev: "https://local.nytimes.com/games/wordle/index.html",
+      prod: "",
+      stg: "",
+      dev: "",
     }),
     fe = "".concat(ue, "/auth/logout?redirect_uri=").concat(A),
     he = [
@@ -14971,10 +14964,7 @@
     return g.useContext(i);
   }
 
-  var Ca =
-      "prod" === v.env.name
-        ? "https://www.nytimes.com"
-        : "https://www.stg.nytimes.com",
+  var Ca = "",
     Aa = "wordle/api/MOOGLE_OPT_IN",
     Oa = "wordle/api/LOAD_MOOGLE_GET",
     Ia = "wordle/api/MOOGLE_GET_SUCCESS",
@@ -17505,7 +17495,7 @@
         .concat(e || "[NONE]", ":\n")
         .concat(s.regi, "\n  ");
     return (
-      "mailto:nytgames@nytimes.com" +
+      "mailto:" +
       ((n = { subject: o, body: s }),
       (a = []),
       Object.keys(n).forEach(function (e) {
@@ -18022,7 +18012,7 @@
     return _.createElement(
       "a",
       {
-        href: "https://www.nytimes.com/crosswords",
+        href: "",
         onClick: function () {
           return e(W("wordle", "games-logo-nav", !0, null));
         },
@@ -18169,219 +18159,6 @@
         "span",
         { className: qs.navHeader },
         _.createElement(Ds, null)
-      ),
-      _.createElement(
-        "span",
-        { className: qs.moreText },
-        "More From New York Times Games"
-      ),
-      _.createElement(
-        "div",
-        { className: qs.gameList },
-        [
-          {
-            id: "spelling-bee",
-            name: "Spelling Bee",
-            url: "/puzzles/spelling-bee?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--spelling-bee)",
-            dataTrackLabel: "spelling-bee-nav",
-          },
-          {
-            id: "crossword",
-            name: "The Crossword",
-            url: "/crosswords/game/daily?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--daily)",
-            dataTrackLabel: "daily-page-nav",
-          },
-          {
-            id: "mini",
-            name: "The Mini",
-            url: "/crosswords/game/mini?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--mini)",
-            dataTrackLabel: "mini-page-nav",
-          },
-          {
-            id: "wordlebot",
-            name: "WordleBot: Your Daily Wordle Companion",
-            url: "/interactive/2022/upshot/wordle-bot.html?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--wordlebot)",
-            dataTrackLabel: "wordle-bot-nav",
-          },
-          {
-            id: "chess",
-            name: "Chess",
-            url: "/spotlight/chess-puzzles?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--chess)",
-            dataTrackLabel: "chess-nav",
-          },
-          {
-            id: "gameplay-stories",
-            name: "Gameplay Stories",
-            url: "/column/wordplay?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            dataTrackLabel: "gameplay-stories-nav",
-          },
-          {
-            id: "more-games",
-            name: "More Games",
-            url: "/puzzles?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            dataTrackLabel: "all-games-nav",
-          },
-        ].map(function (e) {
-          return _.createElement(
-            "a",
-            {
-              "aria-label": e.name,
-              key: e.id,
-              className: qs.navLink,
-              href: e.url,
-              onClick: function () {
-                return o(W("wordle", e.dataTrackLabel, !0, null));
-              },
-            },
-            _.createElement(
-              "div",
-              { className: qs.navItem },
-              _.createElement("span", {
-                style: t(e.backgroundImage),
-                className: qs.navIcon,
-              }),
-              e.name
-            )
-          );
-        })
-      ),
-      _.createElement(
-        "div",
-        { className: qs.nytList },
-        [
-          {
-            id: "nyt",
-            name: "The New York Times",
-            url: "https://www.nytimes.com/?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--nyt)",
-            dataTrackLabel: "nyt-nav",
-          },
-          {
-            id: "cooking",
-            name: "New York Times Cooking",
-            url: "https://cooking.nytimes.com",
-            backgroundImage: "var(--cooking)",
-            dataTrackLabel: "cooking-nav",
-          },
-          {
-            id: "wirecutter",
-            name: "New York Times Wirecutter",
-            url: "https://www.nytimes.com/wirecutter/?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--wirecutter)",
-            dataTrackLabel: "wirecutter-nav",
-          },
-          {
-            id: "athletic",
-            name: "The Athletic",
-            url: "https://theathletic.com/?utm_source=wordle&utm_medium=referral&utm_campaign=wordle_nav",
-            backgroundImage: "var(--athletic)",
-            dataTrackLabel: "athletic-nav",
-          },
-        ].map(function (e) {
-          return _.createElement(
-            "a",
-            {
-              "aria-label": e.name,
-              href: e.url,
-              className: qs.navLink,
-              onClick: function () {
-                return o(W("wordle", e.dataTrackLabel, !0, null));
-              },
-              id: e.id,
-              key: e.id,
-              "data-track-label": e.dataTrackLabel,
-            },
-            _.createElement(
-              "div",
-              { className: qs.navItem },
-              _.createElement("span", {
-                style: t(e.backgroundImage),
-                className: qs.navIcon,
-              }),
-              e.name
-            )
-          );
-        })
-      ),
-      _.createElement(
-        "div",
-        { className: n ? qs.privacyStatic : qs.privacy },
-        _.createElement(
-          "a",
-          {
-            className: qs.privacyItem,
-            href: "https://www.nytimes.com/privacy/privacy-policy",
-            "data-track-label": "privacy-policy-nav",
-            onClick: function () {
-              return o(W("wordle", "privacy-policy-nav", !0, null));
-            },
-          },
-          "Privacy Policy"
-        ),
-        _.createElement(
-          _.Fragment,
-          null,
-          "show" === e.PURR_DataSaleOptOutUI_v2 &&
-            _.createElement(
-              "div",
-              { className: "ccpa-opt-out" },
-              _.createElement(
-                "a",
-                {
-                  href: "#ccpa-hamburger",
-                  "data-region": "menu",
-                  "data-track": "linkOptOut",
-                  className: p(
-                    qs.privacyItem,
-                    "ccpa-link ccpa-opt-out-link ccpa-impression"
-                  ),
-                },
-                "Do Not Sell My Personal Information"
-              )
-            ),
-          "show-opted-out" === e.PURR_DataSaleOptOutUI_v2 &&
-            _.createElement(
-              "div",
-              null,
-              _.createElement(
-                "span",
-                {
-                  "data-region": "menu",
-                  "data-track": "optedOut",
-                  className: p(
-                    qs.privacyItem,
-                    "ccpa-user-opted-out ccpa-impression"
-                  ),
-                },
-                "We No Longer Sell Your Personal Information"
-              )
-            ),
-          "show" === e.PURR_CaliforniaNoticesUI &&
-            _.createElement(
-              "div",
-              null,
-              _.createElement(
-                "a",
-                {
-                  target: "_blank",
-                  rel: "noopener noreferrer",
-                  href: "https://www.nytimes.com/privacy/california-notice",
-                  "data-region": "menu",
-                  "data-track": "linkCANotice",
-                  className: p(
-                    qs.privacyItem,
-                    "ccpa-link ccpa-california-notice-link ccpa-impression"
-                  ),
-                },
-                "California Notices"
-              )
-            )
-        )
       ),
       n && _.createElement(Qs, { loggedIn: a })
     );
