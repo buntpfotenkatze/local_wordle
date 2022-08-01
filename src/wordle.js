@@ -52,14 +52,7 @@
       (t.src = e), (t.async = !0), document.body.appendChild(t);
     }
 
-    return (
-      window.isHybridWebView ||
-        (e(
-          "https://www.nytimes.com/games-assets/gdpr/cookie-notice-v2.1.2.min.js"
-        ),
-        e(window.env.gtm)),
-      null
-    );
+    return window.isHybridWebView || (e(""), e(window.env.gtm)), null;
   }
 
   var i = g.createContext({
@@ -16132,7 +16125,11 @@
       var t = Fo(g.useState(Uo), 2),
         n = t[0],
         a = t[1],
-        o = "help" === e || "statistics" === e || "settings" === e;
+        o =
+          "help" === e ||
+          "statistics" === e ||
+          "settings" === e ||
+          "save" === e;
       return (
         g.useEffect(function () {
           function e() {
@@ -16162,6 +16159,7 @@
         "M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81 1.66 0 3-1.34 3-3s-1.34-3-3-3-3 1.34-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9c-1.66 0-3 1.34-3 3s1.34 3 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.16c-.05.21-.08.43-.08.65 0 1.61 1.31 2.92 2.92 2.92s2.92-1.31 2.92-2.92c0-1.61-1.31-2.92-2.92-2.92zM18 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM6 13c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm12 7.02c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1z",
       statistics:
         "M20.6666 14.8333V5.5H11.3333V12.5H4.33325V26.5H27.6666V14.8333H20.6666ZM13.6666 7.83333H18.3333V24.1667H13.6666V7.83333ZM6.66659 14.8333H11.3333V24.1667H6.66659V14.8333ZM25.3333 24.1667H20.6666V17.1667H25.3333V24.1667Z",
+      save: "M3,20.05V3.72H17.48L21,7.58V20.05ZM6.85,9.64m0-5.92V9.64h8.23V3.72m-2.76,0v4M6.85,13.11h8.23M6.85,16.46H17.13",
     };
 
   function Jo(e) {
@@ -16491,31 +16489,6 @@
             null,
             "A new WORDLE will be available each day!"
           )
-        ),
-        _.createElement(
-          "p",
-          { className: ar.reminderSignUp },
-          "Never miss a Wordle.",
-          " ",
-          _.createElement(
-            "a",
-            {
-              href: "https://www.nytimes.com/newsletters/signup/NTWO",
-              target: "_blank",
-              rel: "noreferrer",
-              onClick: function () {
-                v.trackClick({
-                  name: "wordle",
-                  label: null,
-                  element: { name: "wordle", label: "newsletter-sign-up" },
-                  context: o,
-                });
-              },
-            },
-            "Sign up"
-          ),
-          " ",
-          "for our daily reminder email."
         )
       ),
       e &&
@@ -16899,140 +16872,6 @@
               "data-testid": "timer",
             },
             t
-          )
-        )
-      )
-    );
-  }
-
-  var zr = {
-    promo: "Promo-module_promo__OjSS6",
-    promoLink: "Promo-module_promoLink__9Rsas",
-    promoCta: "Promo-module_promoCta__J70IK",
-    promoText: "Promo-module_promoText__wg6Vu",
-    promoTitle: "Promo-module_promoTitle__TgBo2",
-    promoTextPrimary: "Promo-module_promoTextPrimary__chnyc",
-    promoTextSecondary: "Promo-module_promoTextSecondary__mjI5B",
-    promoIcon: "Promo-module_promoIcon__GIqUm",
-    promoArrow: "Promo-module_promoArrow__iqw6N",
-    rule: "Promo-module_rule__Yn4Pk",
-  };
-
-  function Nr(e) {
-    var t = e.trackClick;
-    return _.createElement(
-      "div",
-      { className: zr.promo },
-      _.createElement("div", { className: zr.rule }),
-      _.createElement(
-        "a",
-        {
-          href: "https://www.nytimes.com/puzzles/spelling-bee",
-          className: zr.promoLink,
-          onClick: function (e) {
-            e.stopPropagation(), t();
-          },
-        },
-        _.createElement(
-          "div",
-          { className: zr.promoIcon },
-          _.createElement(
-            "svg",
-            {
-              width: "42",
-              height: "44",
-              viewBox: "0 0 42 44",
-              fill: "none",
-              xmlns: "http://www.w3.org/2000/svg",
-            },
-            _.createElement("path", {
-              d: "M24.9528 14.8924L28.952 21.8171L24.9528 28.7417H16.9628L12.9636 21.8171L16.9628 14.8924H24.9528Z",
-              fill: "#F7DA21",
-              stroke: "#F7DA21",
-              strokeWidth: "0.495011",
-            }),
-            _.createElement("path", {
-              d: "M12.9892 21.7667L16.9884 28.6914L12.9892 35.616H4.99921L1 28.6914L4.99921 21.7667H12.9892Z",
-              fill: "white",
-              stroke: "#121212",
-              strokeWidth: "1.5",
-            }),
-            _.createElement("path", {
-              d: "M17.0056 14.8493L13.0064 7.92463L17.0056 1L24.9955 1L28.9948 7.92463L24.9955 14.8493L17.0056 14.8493Z",
-              fill: "white",
-              stroke: "#121212",
-              strokeWidth: "1.5",
-            }),
-            _.createElement("path", {
-              d: "M37.0008 7.96736L41 14.892L37.0008 21.8166H29.0108L25.0116 14.892L29.0108 7.96736H37.0008Z",
-              fill: "white",
-              stroke: "#121212",
-              strokeWidth: "1.5",
-            }),
-            _.createElement("path", {
-              d: "M12.9972 7.96736L16.9964 14.892L12.9972 21.8166H5.00727L1.00806 14.892L5.00727 7.96736H12.9972Z",
-              fill: "white",
-              stroke: "#121212",
-              strokeWidth: "1.5",
-            }),
-            _.createElement("path", {
-              d: "M37.0008 21.8089L41 28.7335L37.0008 35.6582H29.0108L25.0116 28.7335L29.0108 21.8089H37.0008Z",
-              fill: "white",
-              stroke: "#121212",
-              strokeWidth: "1.5",
-            }),
-            _.createElement("path", {
-              d: "M24.9947 28.7333L28.9939 35.658L24.9947 42.5826H17.0047L13.0055 35.658L17.0047 28.7333H24.9947Z",
-              fill: "white",
-              stroke: "#121212",
-              strokeWidth: "1.5",
-            })
-          )
-        ),
-        _.createElement(
-          "div",
-          { className: zr.promoText },
-          _.createElement(
-            "span",
-            { className: zr.promoTextPrimary },
-            "How many words can you find",
-            " "
-          ),
-          _.createElement(
-            "span",
-            { className: zr.promoTextsecondary },
-            "using 7 letters?"
-          ),
-          _.createElement(
-            "span",
-            { className: zr.promoCta },
-            "Play Spelling Bee"
-          )
-        ),
-        _.createElement(
-          "div",
-          { className: zr.promoArrow },
-          _.createElement(
-            "svg",
-            {
-              width: "24",
-              height: "24",
-              viewBox: "0 0 24 24",
-              fill: "none",
-              xmlns: "http://www.w3.org/2000/svg",
-            },
-            _.createElement("circle", {
-              cx: "12",
-              cy: "12",
-              r: "12",
-              fill: "var(--svg-arrow-fill)",
-            }),
-            _.createElement("path", {
-              d: "M10.4038 6L15.8076 11.4038L10.4038 16.8076",
-              stroke: "var(--svg-arrow-stroke)",
-              strokeWidth: "1.5",
-              strokeLinecap: "round",
-            })
           )
         )
       )
@@ -17456,20 +17295,6 @@
         "div",
         { className: as },
         _.createElement(
-          "a",
-          {
-            type: "button",
-            id: "promo-button",
-            className: os,
-            onClick: function () {
-              return n();
-            },
-            href: "https://www.nytimes.com/puzzles/spelling-bee",
-          },
-          _.createElement("span", null, "Play Spelling Bee"),
-          _.createElement("span", { className: Ur })
-        ),
-        _.createElement(
           "button",
           {
             type: "button",
@@ -17580,24 +17405,7 @@
                 handleTrack: u,
                 handleShare: d,
               })
-            : _.createElement(
-                "div",
-                { className: dr.promoButtonContainer },
-                _.createElement(
-                  "a",
-                  {
-                    type: "button",
-                    id: "promo-button",
-                    className: dr.promoButton,
-                    href: "https://www.nytimes.com/puzzles/spelling-bee",
-                    onClick: function () {
-                      u();
-                    },
-                  },
-                  _.createElement("span", null, "Play Spelling Bee"),
-                  _.createElement("span", { className: dr.promoIcon })
-                )
-              )
+            : _.createElement("div")
         )
       );
     }
@@ -17640,8 +17448,7 @@
               )
             )
           )
-        ),
-      _.createElement(Nr, { trackClick: u })
+        )
     );
   }
 
@@ -17768,7 +17575,6 @@
   var _s = "Settings-module_setting__IdN-T",
     vs = "Settings-module_title__f-cFy",
     xs = "Settings-module_text__o3woy",
-    Ss = "Settings-module_feedbackLink__eL28L",
     Es = "Settings-module_description__rTo9u",
     js = "Settings-module_footnote__UtMtH",
     zs = "Settings-module_enableAuth__TOxGg";
@@ -17877,119 +17683,6 @@
                 })
               )
             )
-          ),
-          _.createElement(
-            "section",
-            null,
-            _.createElement(
-              "div",
-              { className: _s },
-              _.createElement(
-                "div",
-                { className: xs },
-                _.createElement("div", { className: vs }, "Feedback")
-              ),
-              _.createElement(
-                "div",
-                null,
-                _.createElement(
-                  "a",
-                  {
-                    className: Ss,
-                    href: c,
-                    title: "nytgames@nytimes.com",
-                    onClick: function (e) {
-                      var t, n, a, o;
-                      window.isHybridWebView &&
-                        window.NativeBridge &&
-                        (e.preventDefault(),
-                        (n = ta((t = l))),
-                        (a = t || "[NONE]"),
-                        (o = new Date().getTimezoneOffset()),
-                        (e = Object.entries(window.abra.tests)
-                          .map(function (e) {
-                            return e.join("=");
-                          })
-                          .join(",")),
-                        (n = [
-                          "Hybrid summary:",
-                          "Platform: ".concat(
-                            window.newsreaderAppPlatform ? "News App" : "XW App"
-                          ),
-                          "Viewport Size: "
-                            .concat(document.documentElement.clientWidth, " x ")
-                            .concat(document.documentElement.clientHeight),
-                          "Timezone: ".concat(
-                            "UTC".concat(0 < o ? "" : "+").concat(o / -60)
-                          ),
-                          "Logged In: ".concat(t ? "yes" : "no"),
-                          "Regi: ".concat(a),
-                          "Web Version: ".concat(window.env.version),
-                          "Flags: ".concat(e),
-                          "Anon Local Storage: ".concat(n.anon),
-                          "Local Storage Statistics: ".concat(n.stats),
-                          "Local Storage for regi "
-                            .concat(a, ": ")
-                            .concat(n.regi),
-                          "Build: ".concat(
-                            null === (n = window.sentryConfig) || void 0 === n
-                              ? void 0
-                              : n.release
-                          ),
-                        ].join("\n")),
-                        window.NativeBridge.gamesSendEmail({
-                          type: "feedback",
-                          debugInfo: n,
-                        }));
-                    },
-                  },
-                  "Email"
-                )
-              )
-            ),
-            _.createElement(
-              "div",
-              { className: _s },
-              _.createElement(
-                "div",
-                { className: xs },
-                _.createElement("div", { className: vs }, "Community")
-              ),
-              _.createElement(
-                "div",
-                null,
-                _.createElement(
-                  "a",
-                  {
-                    href: "https://twitter.com/NYTGames",
-                    target: "blank",
-                    title: "@NYTGames",
-                  },
-                  "Twitter"
-                )
-              )
-            ),
-            _.createElement(
-              "div",
-              { className: _s },
-              _.createElement(
-                "div",
-                { className: xs },
-                _.createElement("div", { className: vs }, "Questions?")
-              ),
-              _.createElement(
-                "div",
-                null,
-                _.createElement(
-                  "a",
-                  {
-                    href: "https://help.nytimes.com/hc/en-us/articles/360029050872-Word-Games-and-Logic-Puzzles#h_01FVGCB2Z00ZQMDMCYWBPWJNXB",
-                    target: "blank",
-                  },
-                  "FAQ"
-                )
-              )
-            )
           )
         ),
         _.createElement(
@@ -18052,6 +17745,118 @@
       enableAuth: "Modal-module_enableAuth__SR682",
       shortStatsModal: "Modal-module_shortStatsModal__QXJBs",
     };
+
+  var saveModal = function () {
+    var e = T(),
+      t = P(Ye),
+      n = P(Ge),
+      a = P(Fe),
+      o = P(L),
+      r = P(I),
+      s = P(O),
+      i = P(Ee),
+      l = P(Ae),
+      c = no("auth"),
+      u = !s && "IN_PROGRESS" === n && 0 !== a,
+      a = c || i,
+      c = window.isHybridWebView ? void 0 : ds(l);
+    return _.createElement(
+      _.Fragment,
+      null,
+      _.createElement(
+        "div",
+        null,
+        _.createElement(
+          "section",
+          null,
+          _.createElement(
+            "div",
+            { className: _s },
+            _.createElement(
+              "div",
+              { className: xs },
+              _.createElement("div", { className: vs }, "Save Stats"),
+              _.createElement(
+                "div",
+                { className: Es },
+                "Save stats to a local .json file"
+              )
+            ),
+            _.createElement(Jo, {
+              icon: "save",
+              name: "saveStats",
+              onClick: function () {
+                let stats = JSON.parse(
+                  window.localStorage.getItem("nyt-wordle-moogle/ANON")
+                )["stats"];
+
+                let file = new Blob([JSON.stringify(stats)], {
+                  type: "text/json",
+                });
+                let filename = `wordle_stats_${new Date()
+                  .toISOString()
+                  .substring(0, 10)}.json`;
+                let link = document.createElement("a"),
+                  url = URL.createObjectURL(file);
+                link.href = url;
+                link.download = filename;
+                document.body.appendChild(link);
+                link.click();
+                setTimeout(function () {
+                  document.body.removeChild(link);
+                  window.URL.revokeObjectURL(url);
+                }, 0);
+              },
+              selected: s,
+            })
+          ),
+          _.createElement(
+            "div",
+            { className: _s },
+            _.createElement(
+              "div",
+              { className: xs },
+              _.createElement("div", { className: vs }, "Load Stats"),
+              _.createElement(
+                "div",
+                { className: Es },
+                "Also from a local .json file"
+              )
+            ),
+            _.createElement("input", {
+              id: "inputload",
+              type: "file",
+              accept: ".json",
+              name: "loadStats",
+              onChange: function (e) {
+                new Response(e.target.files[0]).json().then(
+                  (json) => {
+                    let stats = JSON.parse(
+                      window.localStorage.getItem("nyt-wordle-moogle/ANON")
+                    );
+                    stats["stats"] = json;
+                    window.localStorage.setItem(
+                      "nyt-wordle-moogle/ANON",
+                      JSON.stringify(stats)
+                    );
+                    window.localStorage.setItem(
+                      "nyt-wordle-statistics",
+                      JSON.stringify(json)
+                    );
+                    console.debug("loaded stats! refreshing", json);
+                    window.location.reload();
+                  },
+                  (err) => {
+                    console.log("could not load data!", err);
+                  }
+                );
+              },
+            })
+          )
+        )
+      )
+    );
+  };
 
   function Ms() {
     return (Ms =
@@ -18168,6 +17973,7 @@
         : c,
       r = {
         help: _.createElement(sr, { isPage: !1, enableAuth: s, isLoggedIn: i }),
+        save: _.createElement(saveModal, null),
         stats: _.createElement(us, null),
         settings: _.createElement(Ns, null),
       }[e],
@@ -19231,6 +19037,7 @@
       e.animationName === Ni.SlideOut && (o(!1), t(ae()));
     }),
       (r = {
+        save: { content: _.createElement(saveModal, null), title: "Save" },
         settings: { content: _.createElement(Ns, null), title: "Settings" },
         help: {
           content: _.createElement(sr, { isPage: !0 }),
@@ -20132,37 +19939,6 @@
     return _.createElement(
       "header",
       { className: p(cl.appHeader, "wordle-app-header") },
-      _.createElement(
-        "div",
-        { className: cl.menuLeft },
-        _.createElement(
-          ro,
-          null,
-          _.createElement(
-            "button",
-            {
-              type: "button",
-              id: cl.navButton,
-              className: cl.icon,
-              "aria-label":
-                "Navigation menu. Click for links to other NYT Games and our Privacy Policy.",
-              tabIndex: -1,
-              onClick: function () {
-                return a(oe());
-              },
-            },
-            _.createElement(ll, null)
-          )
-        ),
-        _.createElement(
-          so,
-          null,
-          _.createElement(oo, {
-            buttonStyle: cl.hybridBackButton,
-            trackData: e,
-          })
-        )
-      ),
       _.createElement("div", { className: cl.title }, "Wordle"),
       _.createElement(
         "div",
@@ -20186,6 +19962,27 @@
             },
           },
           _.createElement(Jo, { icon: "help" })
+        ),
+        _.createElement(
+          "button",
+          {
+            type: "button",
+            id: "save-button",
+            className: cl.icon,
+            "aria-label": "save",
+            tabIndex: -1,
+            onClick: function () {
+              v.trackClick({
+                name: "wordle",
+                label: "save",
+                context: n,
+                useBeacon: !0,
+              }),
+                a((s ? ee : te)("save"));
+            },
+            disabled: t,
+          },
+          _.createElement(Jo, { icon: "save", disabled: t })
         ),
         _.createElement(
           "button",

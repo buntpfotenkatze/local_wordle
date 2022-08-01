@@ -860,15 +860,7 @@
         : p[Ce].push(Te({ event: e }, t));
     },
     qe = R(function () {
-      if (window.isHybridWebView) return null;
-      var e = O({
-          sourceApp: je,
-          referrer: d.referrer,
-          assetUrl: Ne,
-          caller_id: je,
-        }),
-        e = "".concat(h.tagx, "/svc/nyt/data-layer").concat(e);
-      return W.get(e, { withCookie: !1 });
+      return null;
     }),
     Me = function (e) {
       var t = e.name,
@@ -1388,126 +1380,13 @@
     return r;
   }
 
-  var vt =
-    "prod" === h.name
-      ? "https://purr.nytimes.com"
-      : "https://purr.dev.nytimes.com";
-  W.get("".concat(vt, "/v1/purr-cache"), { withCookie: !1 });
-
-  function yt(e) {
-    return y(e, "dimmed");
-  }
-
-  function gt(e) {
-    return g(e, "dimmed");
-  }
-
   function _t() {
-    var e, c, t, u, l;
+    var e, t;
     try {
       (e = ht(document.getElementsByClassName("ccpa-impression"))),
-        (c = ht(document.getElementsByClassName("ccpa-opt-out"))),
         (t = ht(document.querySelectorAll(".ccpa-link")));
     } catch (e) {
       return;
-    }
-
-    function p(e) {
-      function t(e) {
-        var t = !(e instanceof Error),
-          n = D
-            ? "Your preference has been saved, we will no longer sell your information."
-            : "Your request to not sell your data will be stored for this browser and device.",
-          r = t
-            ? ((s = D
-                ? "As a California resident, you have additional rights under the California Consumer Privacy Act of 2018. While The New York Times Company does not “sell” personal information of its readers as the term “sell” is traditionally understood, “sell” under the CCPA is broadly defined. To learn more, review the text below."
-                : "If you clear your cookies, your preference will be forgotten. As a California resident, you have additional rights under the California Consumer Privacy Act of 2018. While The New York Times Company does not “sell” personal information of its readers as the term “sell” is traditionally understood, “sell” under the CCPA is broadly defined. To learn more, review the text below."),
-              '\n  <div class="ccpa-snackbar" role="status" data-region="popup">\n    <div class="ccpa-snackbar__dismiss-icon ccpa-modal-link" role="button" data-region="footer" data-element-name="X button" data-label="X" data-track="noticeOptOut"></div>\n    <div class="ccpa-snackbar__header">'
-                .concat(
-                  n,
-                  '</div>\n    <div class="ccpa-snackbar__msg-container">\n    <div class="ccpa-snackbar__msg">'
-                )
-                .concat(
-                  s,
-                  '</div>\n      <div class="ccpa-snackbar__terms">\n        <p>The New York Times Company does not sell personal information of its readers as the term "sell" is traditionally understood. But "sell" under the CCPA is broadly defined. It includes the sharing of personal information with third parties in exchange for something of value, even if no money changes hands. For example, sharing an advertising or device identifier to a third party may be considered a “sale” under the CCPA.</p>\n        <p>To the extent The New York Times Company "sells" your personal information (as the term "sell" is defined under the CCPA), you have the right to opt-out of that “sale” on a going-forward basis at any time. To exercise this right, click the “Do Not Sell My Personal Information” link in the footer of our website or under your “Account,” which you have already done. You can also submit a request to opt-out by emailing us at <a href="mailto:privacy@nytimes.com">privacy@nytimes.com</a> with the subject line “California Resident - Do Not Sell.”</p>\n        <p>Once you have opted out, you will see a change to “We No Longer Sell Your Personal Information.” If you have an account with certain Times Services (specifically nytimes.com, cooking.nytimes.com, nytimes.com/crosswords, the New York Times app, the New York Times Cooking app and the New York Times Crossword app) and are logged in, we will save your preference and honor your opt-out request across browsers and devices so long as you remain logged in. If you are not logged in, or do not have an account with any Times Services listed above, your opt-out of the “sale” of personal information will be specific to the browser or device from which you have clicked “Do Not Sell My Personal Information” and until you clear your cookies (or local storage in apps) on this browser or device.</p>\n        <p>If your browser or device is using a “do not track” setting, we will detect it and honor it on that specific browser or device only. If you wish to have a “do not track” experience across all of your browsers and devices, please make sure that all of your browsers and devices are set on “do not track.”</p>\n        <p>After you opt out of the “sale” of your personal information, we will no longer "sell" your personal information to third parties (except in an aggregated or de-identified manner so it is no longer personal information), but we will continue to share your personal information with our service providers, which process it on our behalf. Exercising your right to opt out of the “sale” of your personal information does not mean that you will stop seeing ads on our sites and apps.</p>\n        <p>To opt-out of interest-based advertising as much as technically possible, go to <a class="test-manage-trackers-link ccpa-modal-link" data-region="footer" data-track="noticeOptOut" data-region="footer" data-element-name="manage trackers link" target="_blank" rel="noopener noreferrer" href="http://www.nytimes.com/privacy/cookie-policy#how-do-i-manage-trackers">"How Do I Manage Trackers"</a> in our Cookie Policy. To opt out of the “sale” of your personal information from participating companies, please visit the Digital Advertising Alliance <a class="ccpa-modal-link test-daa-link-web" data-region="footer" data-element-name="DAA web link" data-track="noticeOptOut" target="_blank" rel="noopener noreferrer" href="https://optout.privacyrights.info/?c=1">website</a> or <a class="ccpa-modal-link test-daa-link-apps" target="_blank" rel="noopener noreferrer" href="https://www.privacyrights.info/appchoices" data-region="footer" data-element-name="DAA apps link" data-track="noticeOptOut">apps</a>. We do not control these opt-out mechanisms and are not responsible for their operation.</p>\n        <p>You can designate someone else to make a request on your behalf. To protect your information, we will ask for a signed permission from you authorizing the other person to submit a request on your behalf. We will contact you to verify your identity before we respond to your authorized agent’s request.</p>\n        <p>After 12 months, we may ask you if you want to opt into the “sale” of your personal information.</p>\n        <p>For further information, please refer to our <a href="https://www.nytimes.com/privacy/privacy-policy" class="test-privacy-policy-link ccpa-modal-link" target="_blank" rel="noopener noreferrer" data-region="footer" data-element-name="privacy policy link" data-track="noticeOptOut">Privacy Policy</a>.</p>\n      </div>\n    </div>\n    <div class="ccpa-bottom">\n      <div role="button" class="ccpa-snackbar__dismiss ccpa-modal-link" data-region="footer" data-track="noticeOptOut" data-element-name="dismiss button">DISMISS</div>\n      <a href="https://www.nytimes.com/privacy/privacy-policy" class="test-privacy-learn-more ccpa-modal-link ccpa-privacy-link" target="_blank" rel="noopener noreferrer" data-region="footer" data-element-name="learn more about privacy link" data-track="noticeOptOut">Learn more about your privacy</a>\n    </div>\n  </div>\n'
-                ))
-            : '\n  <div class="ccpa-snackbar error" role="status">\n    <div class="ccpa-snackbar__error">Something went wrong. Please try again.</div>\n  </div>\n';
-        document.body.insertAdjacentHTML("beforeend", r);
-        var i = ht(
-            document.querySelectorAll(
-              ".pz-footer, .pz-header, .pz-content, .wordle-app-header, #wordle-app-game"
-            )
-          ),
-          o = ht(document.querySelectorAll(".ccpa-modal-link")),
-          a = document.querySelector(".ccpa-snackbar"),
-          e = document.querySelector(".ccpa-snackbar__dismiss"),
-          s = document.querySelector(".ccpa-snackbar__dismiss-icon"),
-          r = function () {
-            (l = !1), u && clearTimeout(u), y(a, "dismissed"), i.map(gt);
-          };
-        e && e.addEventListener("click", r),
-          s && s.addEventListener("click", r),
-          o.forEach(function (e) {
-            e.addEventListener("click", pt);
-          }),
-          setTimeout(function () {
-            y(a, "enter"), t && i.map(yt);
-          }, 30),
-          t ||
-            (Le("impression", {
-              module: {
-                name: "ccpa snackbar message",
-                label: "Something went wrong. Please try again.",
-              },
-            }),
-            (u = window.setTimeout(function () {
-              (l = !1),
-                u && clearTimeout(u),
-                document
-                  .querySelectorAll(".ccpa-snackbar.error")
-                  .forEach(function (e) {
-                    e.remove();
-                  }),
-                i.map(gt);
-            }, 3e3))),
-          t &&
-            (c.forEach(function (e) {
-              var t = e.firstChild,
-                n = t.className,
-                t = t.dataset.region;
-              (e.innerHTML = '<span class="'
-                .concat(n, '" data-region="')
-                .concat(
-                  t,
-                  '" data-track="optedOut">We No Longer Sell Your Personal Information</span>'
-                )),
-                e.removeEventListener("click", p);
-            }),
-            Le("impression", {
-              module: { name: "ccpa notice of opt out element", label: n },
-            }));
-      }
-
-      e.preventDefault(),
-        l ||
-          ((l = !0),
-          document.URL.includes("/games/wordle")
-            ? W.post(
-                "".concat(vt, "/v2/preferences"),
-                { ccpa_pref: "opt-out" },
-                { withCookie: !1 }
-              )
-                .then(t)
-                .catch(function (e) {
-                  console.warn(e);
-                })
-            : W.post(
-                "".concat(vt, "/v1/preferences"),
-                { ccpa_pref: "opt-out" },
-                { withCookie: !1 }
-              )
-                .then(t)
-                .catch(t));
     }
 
     t.forEach(function (e) {
@@ -1522,9 +1401,6 @@
             t[st]
               ? null !== (e = t[st]) && void 0 !== e && e.push(n)
               : ((t[st] = [n]), at.observe(t)));
-      }),
-      c.forEach(function (e) {
-        b(e, "click", p);
       });
   }
 
